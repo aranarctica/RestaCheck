@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import Modelo.Usuario;
+
 public class UsuarioModelo extends Conector {
 
 	public ArrayList<Usuario> selectAll() {
@@ -77,4 +79,20 @@ public class UsuarioModelo extends Conector {
 		return null;
 	}
 
+	public void insertarUsuario(Usuario usuario) {
+		try {
+			PreparedStatement pst = super.conexion.prepareStatement(
+					"INSERT INTO usuarios (nombre, apellido, email, contrasena, telefono, rol) VALUES(?,?,?,?,?,?)");
+			pst.setString(1, usuario.getNombre());
+			pst.setString(2, usuario.getApellido());
+			pst.setString(3, usuario.getEmail());
+			pst.setString(4, usuario.getContrasena());
+			pst.setString(6, usuario.getTelefono());
+			pst.setString(7, usuario.getRol());
+			pst.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
 }
