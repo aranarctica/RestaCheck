@@ -20,11 +20,13 @@ public class login extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		String email = request.getParameter("email");
 		String contrasena = request.getParameter("contrasena");
+		
 		usuario = usuarioModelo.selectEmailContrasena(email, contrasena);
 		if (usuario.getEmail().equals(email) && usuario.getContrasena().equals(contrasena)) {
-			request.setAttribute("usuario", email);  
-			
-			response.sendRedirect("www/pages/panelControl.jsp");
+			request.getSession().setAttribute("iniciado", true); 
+			request.setAttribute("usuario", usuario);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("web/gestor_login/sistema.jsp");
+			dispatcher.forward(request, response);
 		} else {
 
 		}

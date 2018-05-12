@@ -5,7 +5,7 @@ package modelo;
 public class Config {
 	
 	
-	public static final String BBDD = "restauranti";
+	public static final String BBDD = "restacheck";
 	public static final String HOST = "localhost";
 	public static final String USERNAME = "root";
 	public static final String PASSWORD = "";

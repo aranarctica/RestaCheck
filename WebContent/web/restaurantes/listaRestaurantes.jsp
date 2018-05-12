@@ -1,16 +1,15 @@
+
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="modelo.Restaurante"%>
-<%@page import="modelo.RestauranteModelo"%>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="java.util.Iterator" %>
-
-
+<%@ page import="modelo.*"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.Iterator"%>
 <%
 	RestauranteModelo restauranteModelo = new RestauranteModelo();
+
 	ArrayList<Restaurante> restaurantes = restauranteModelo.selectAll();
 %>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,114 +43,68 @@
 <link href="css/creative.min.css" rel="stylesheet">
 
 </head>
+<span class="group-btn"> <a
+	href="../cocineros/anadirRestaurante.jsp" class="btn btn-primary btn-md">Añadir
+		un Restaurante <i class="fa fa-sign-in"></i>
+</a>
+	<body id="page-top">
 
-<body id="page-top">
 
 		<%
-		Iterator<Restaurante> i = restaurantes.iterator();
-		Restaurante restaurante;
-		i.hasNext();
-		restaurante = i.next();
+			Iterator<Restaurante> i = restaurantes.iterator();
+			Restaurante restaurante;
+
+			while (i.hasNext()) {
+				restaurante = i.next();
 		%>
 
-	<section class="p-0" id="portfolio">
-		<span class="group-btn"> <a href="WebContent/web/Index.html"
-			class="btn btn-primary btn-md">Añadir un Restaurante <i
-				class="fa fa-sign-in"></i>
-		</a>
+		<section class="p-0" id="portfolio">
+
 			<div class="container-fluid p-0">
 				<div class="row no-gutters popup-gallery">
 					<div class="col-lg-4 col-sm-6">
-						<a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
+						<a class="portfolio-box"
+							href="../cocineros/infoCocineros.jsp?idCocinero=<%=restaurante.getIdRestaurante() %>">
 							<img class="img-fluid" src="img/portfolio/thumbnails/1.jpg"
 							alt="">
 							<div class="portfolio-box-caption">
 								<div class="portfolio-box-caption-content">
 
-									<div class="project-name"><% restaurante.getNombre();%></div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-							<img class="img-fluid" src="img/portfolio/thumbnails/2.jpg"
-							alt="">
-							<div class="portfolio-box-caption">
-								<div class="portfolio-box-caption-content">
+									<div class="project-name"><%=restaurante.getNombre() %></div>
+									<div class="project-name"><%=restaurante.getDireccion() %></div>
 
-									<div class="project-name">Project Name</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-							<img class="img-fluid" src="img/portfolio/thumbnails/3.jpg"
-							alt="">
-							<div class="portfolio-box-caption">
-								<div class="portfolio-box-caption-content">
 
-									<div class="project-name">Project Name</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-							<img class="img-fluid" src="img/portfolio/thumbnails/4.jpg"
-							alt="">
-							<div class="portfolio-box-caption">
-								<div class="portfolio-box-caption-content">
 
-									<div class="project-name">Project Name</div>
 								</div>
 							</div>
 						</a>
 					</div>
-					<div class="col-lg-4 col-sm-6">
-						<a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-							<img class="img-fluid" src="img/portfolio/thumbnails/5.jpg"
-							alt="">
-							<div class="portfolio-box-caption">
-								<div class="portfolio-box-caption-content">
 
-									<div class="project-name">Project Name</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-							<img class="img-fluid" src="img/portfolio/thumbnails/6.jpg"
-							alt="">
-							<div class="portfolio-box-caption">
-								<div class="portfolio-box-caption-content">
 
-									<div class="project-name">Project Name</div>
-								</div>
-							</div>
-						</a>
-					</div>
+
+
+
 				</div>
 			</div>
-	</section>
+			<%
+				}
+			%>
+		</section>
 
 
 
 
-	<!-- Bootstrap core JavaScript -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- Bootstrap core JavaScript -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-	<!-- Plugin JavaScript -->
-	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-	<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-	<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<!-- Plugin JavaScript -->
+		<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+		<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-	<!-- Custom scripts for this template -->
-	<script src="js/creative.min.js"></script>
+		<!-- Custom scripts for this template -->
+		<script src="js/creative.min.js"></script>
 
-</body>
-
+	</body>
 </html>

@@ -2,14 +2,14 @@
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="modelo.Cocinero"%>
-<%@page import="modelo.CocineroModelo"%>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="java.util.Iterator" %>
-<% 
+<%@ page import="modelo.*"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.Iterator"%>
+<%
 	CocineroModelo cocineroModelo = new CocineroModelo();
+
 	ArrayList<Cocinero> cocineros = cocineroModelo.selectAll();
-	%>
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,114 +43,68 @@
 <link href="css/creative.min.css" rel="stylesheet">
 
 </head>
-
-<body id="page-top">
+<span class="group-btn"> <a
+	href="../cocineros/anadirCocineros.jsp" class="btn btn-primary btn-md">Añadir
+		un Cocinero <i class="fa fa-sign-in"></i>
+</a>
+	<body id="page-top">
 
 
 		<%
-		Iterator<Cocinero> i = cocineros.iterator();
-		Cocinero cocinero;
-		i.hasNext();
-		cocinero = i.next();
+			Iterator<Cocinero> i = cocineros.iterator();
+			Cocinero cocinero;
+
+			while (i.hasNext()) {
+				cocinero = i.next();
 		%>
 
-	<section class="p-0" id="portfolio">
-		<span class="group-btn"> <a href="WebContent/web/Index.html"
-			class="btn btn-primary btn-md">Añadir un Cocinero <i class="fa fa-sign-in"></i>
-		</a>
+		<section class="p-0" id="portfolio">
+
 			<div class="container-fluid p-0">
 				<div class="row no-gutters popup-gallery">
 					<div class="col-lg-4 col-sm-6">
-						<a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
+						<a class="portfolio-box"
+							href="../cocineros/infoCocineros.jsp?idCocinero=<%=cocinero.getIdCocinero()%>">
 							<img class="img-fluid" src="img/portfolio/thumbnails/1.jpg"
 							alt="">
 							<div class="portfolio-box-caption">
 								<div class="portfolio-box-caption-content">
 
-									<div class="project-name"><% cocinero.getNombre();%></div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-							<img class="img-fluid" src="img/portfolio/thumbnails/2.jpg"
-							alt="">
-							<div class="portfolio-box-caption">
-								<div class="portfolio-box-caption-content">
+									<div class="project-name"><%=cocinero.getNombre()%></div>
+									<div class="project-name"><%=cocinero.getApellido()%></div>
 
-									<div class="project-name">Project Name</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-							<img class="img-fluid" src="img/portfolio/thumbnails/3.jpg"
-							alt="">
-							<div class="portfolio-box-caption">
-								<div class="portfolio-box-caption-content">
 
-									<div class="project-name">Project Name</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-							<img class="img-fluid" src="img/portfolio/thumbnails/4.jpg"
-							alt="">
-							<div class="portfolio-box-caption">
-								<div class="portfolio-box-caption-content">
 
-									<div class="project-name">Project Name</div>
 								</div>
 							</div>
 						</a>
 					</div>
-					<div class="col-lg-4 col-sm-6">
-						<a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-							<img class="img-fluid" src="img/portfolio/thumbnails/5.jpg"
-							alt="">
-							<div class="portfolio-box-caption">
-								<div class="portfolio-box-caption-content">
 
-									<div class="project-name">Project Name</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-							<img class="img-fluid" src="img/portfolio/thumbnails/6.jpg"
-							alt="">
-							<div class="portfolio-box-caption">
-								<div class="portfolio-box-caption-content">
 
-									<div class="project-name">Project Name</div>
-								</div>
-							</div>
-						</a>
-					</div>
+
+
+
 				</div>
 			</div>
-	</section>
+			<%
+				}
+			%>
+		</section>
 
 
 
 
-	<!-- Bootstrap core JavaScript -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- Bootstrap core JavaScript -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-	<!-- Plugin JavaScript -->
-	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-	<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-	<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<!-- Plugin JavaScript -->
+		<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+		<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-	<!-- Custom scripts for this template -->
-	<script src="js/creative.min.js"></script>
+		<!-- Custom scripts for this template -->
+		<script src="js/creative.min.js"></script>
 
-</body>
-
+	</body>
 </html>

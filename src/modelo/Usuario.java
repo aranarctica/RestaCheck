@@ -1,6 +1,6 @@
 package modelo;
 
-public class Usuario {
+public class Usuario extends Conector{
 
 	private int idUsuario;
 	private String nombre;
@@ -10,6 +10,10 @@ public class Usuario {
 	private String telefono;
 	private String rol;
 	
+	public Usuario(){
+		
+	}
+
 	public String getRol() {
 		return rol;
 	}
@@ -63,6 +67,15 @@ public class Usuario {
 	}
 
 	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public Usuario(String nombre, String apellido, String email, String contrasena, String rol, String telefono) {
+		this.email = email;
+		this.contrasena = contrasena;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.rol = rol;
 		this.telefono = telefono;
 	}
 

@@ -1,12 +1,23 @@
 package modelo;
 
-public class Restaurante {
+import java.util.ArrayList;
+
+public class Restaurante extends Conector{
 
 	private int idRestaurante;
 	private String nombre;
 	private String direccion;
 	private String telefono;
 	private String precio;
+	ArrayList<Cocinero> Cocinero;
+
+	public ArrayList<Cocinero> getCocinero() {
+		return Cocinero;
+	}
+
+	public void setCocinero(ArrayList<Cocinero> cocinero) {
+		Cocinero = cocinero;
+	}
 
 	public int getIdRestaurante() {
 		return idRestaurante;

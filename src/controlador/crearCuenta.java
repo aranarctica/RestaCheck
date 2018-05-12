@@ -16,17 +16,17 @@ public class crearCuenta extends HttpServlet{
 		
 		String nombre = request.getParameter("nombre");
 		String apellido = request.getParameter("apellido");
-		String telefono = request.getParameter("email");
-		String email = request.getParameter("contrasena");
-		String contrasena = request.getParameter("telefono");
+		String email = request.getParameter("email");
+		String contrasena = request.getParameter("contrasena");
+		String telefono = request.getParameter("telefono");
 		
 		
 		Usuario usuario = new Usuario();
 		
-		if (nombre != "" && apellido != "" && email != "" && contrasena != "") {
+		if (nombre != "" && apellido != "" && email != "" && contrasena != "" && telefono != "") {
 		
 			usuarioModelo.insertarUsuario(usuario);
-			response.sendRedirect("web/cateoria.html");
+			response.sendRedirect("web/categoria.html");
 		} else {
 			
 			 

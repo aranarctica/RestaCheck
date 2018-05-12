@@ -1,13 +1,23 @@
 package modelo;
 
+import java.util.ArrayList;
 
-
-public class Cocinero {
+public class Cocinero extends Conector{
 
 	private int idCocinero;
 	private String nombre;
 	private String apellido;
-	private int trabaja;
+	private String trabaja;
+
+	ArrayList<Restaurante> restaurante;
+
+	public ArrayList<Restaurante> getRestaurante() {
+		return restaurante;
+	}
+
+	public void setRestaurante(ArrayList<Restaurante> restaurante) {
+		this.restaurante = restaurante;
+	}
 
 	public int getIdCocinero() {
 		return idCocinero;
@@ -33,11 +43,11 @@ public class Cocinero {
 		this.apellido = apellido;
 	}
 
-	public int getTrabaja() {
+	public String getTrabaja() {
 		return trabaja;
 	}
 
-	public void setTrabaja(int trabaja) {
+	public void setTrabaja(String trabaja) {
 		this.trabaja = trabaja;
 	}
 
