@@ -6,11 +6,14 @@ import java.sql.Blob;
 import java.util.ArrayList;
 
 public class Cocinero extends Conector {
-
+/**
+ * Atributos de Cocinero
+ * 
+ * 
+ */
 	private int idCocinero;
 	private String nombre;
 	private String apellido;
-	private String trabaja;
 
 
 	
@@ -41,12 +44,6 @@ public class Cocinero extends Conector {
 		this.apellido = apellido;
 	}
 
-	public String getTrabaja() {
-		return trabaja;
-	}
-
-	public void setTrabaja(String trabaja) {
-		this.trabaja = trabaja;
-	}
+	
 
 }

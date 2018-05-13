@@ -7,7 +7,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class RestauranteModelo extends Conector {
-
+	/**
+	 * 
+	 * Recoge todos los atributos de Restaurantes y los delvuelve en un ArrayList
+	 * @return ArrayList<Restaurate> lista Restaurantes
+	 */
 	public ArrayList<Restaurante> selectAll() {
 		ArrayList<Restaurante> restaurantes = new ArrayList<Restaurante>();
 
@@ -18,6 +22,7 @@ public class RestauranteModelo extends Conector {
 				Restaurante restaurante = new Restaurante();
 				restaurante.setIdRestaurante(rs.getInt("idRestaurante"));
 				restaurante.setNombre(rs.getString("nombre"));
+				restaurante.setTelefono(rs.getString("telefono"));
 				restaurantes.add(restaurante);
 
 			}
@@ -27,6 +32,11 @@ public class RestauranteModelo extends Conector {
 		}
 		return restaurantes;
 	}
+	/**
+	 * Selecciona cada Restaurante por su codigo
+	 * @param idRestaurantes tipo int
+	 * @return Restaurante restaurante
+	 */
 
 	public Restaurante selectPorid(int idRestaurante) {
 		Restaurante restaurante = new Restaurante();
@@ -39,21 +49,25 @@ public class RestauranteModelo extends Conector {
 				restaurante.setNombre(rs.getString("nombre"));
 				restaurante.setDireccion(rs.getString("direccion"));
 				restaurante.setTelefono(rs.getString("telefono"));
-				restaurante.setPrecio(rs.getString("precio"));
+				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return restaurante;
 	}
-	
+	/**
+	 * Inserta un Restaurante en la Base De Datos
+	 * @param restaurante Añade un restaurante
+	 */
 	public void insert(Restaurante restaurante) {
 
 		try {
-			PreparedStatement pst = super.conexion
-					.prepareStatement("INSERT INTO restaurante (nombre, direccion) values(?,?)");
+			PreparedStatement pst = super.conexion.prepareStatement("INSERT INTO restaurante (nombre, direccion, telefono) values(?,?,?)");
 			pst.setString(1, restaurante.getNombre());
 			pst.setString(2, restaurante.getDireccion());
+			pst.setString(3, restaurante.getTelefono());
+			
 
 			pst.execute();
 

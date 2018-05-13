@@ -8,6 +8,11 @@ import java.util.ArrayList;
 
 public class CocineroModelo extends Conector {
 
+	/**
+	 * 
+	 * Recoge todos los atributos de Cocinero y los delvuelve en un ArrayList
+	 * @return ArrayList<Cocinero> lista Cocineros
+	 */
 	public ArrayList<Cocinero> selectAll() {
 		ArrayList<Cocinero> cocineros = new ArrayList<Cocinero>();
 
@@ -19,7 +24,6 @@ public class CocineroModelo extends Conector {
 				cocinero.setIdCocinero(rs.getInt("idCocineros"));
 				cocinero.setNombre(rs.getString("nombre"));
 				cocinero.setApellido(rs.getString("apellido"));
-				cocinero.setTrabaja(rs.getString("trabaja"));
 
 				cocineros.add(cocinero);
 
@@ -31,6 +35,11 @@ public class CocineroModelo extends Conector {
 		return cocineros;
 	}
 
+	/**
+	 * Selecciona cada Cocinero por su codigo
+	 * @param idCocineros tipo int
+	 * @return Cocinero cocinero
+	 */
 	public Cocinero selectPorid(int idCocineros) {
 
 		try {
@@ -42,7 +51,6 @@ public class CocineroModelo extends Conector {
 				cocinero.setIdCocinero(rs.getInt("idCocineros"));
 				cocinero.setNombre(rs.getString("nombre"));
 				cocinero.setApellido(rs.getString("apellido"));
-				cocinero.setTrabaja(rs.getString("trabaja"));
 				return cocinero;
 			}
 		} catch (SQLException e) {
@@ -50,11 +58,14 @@ public class CocineroModelo extends Conector {
 		}
 		return null;
 	}
-
+/**
+ * Inserta un Cocinero en la Base De Datos
+ * @param cocinero Añade un cocinero
+ */
 	public void insert(Cocinero cocinero) {
 
 		try {
-			PreparedStatement pst = super.conexion.prepareStatement("INSERT INTO cocineros (nombre, apellido) values(?,?");
+			PreparedStatement pst = super.conexion.prepareStatement("INSERT INTO cocineros (nombre, apellido) values(?,?)");
 			pst.setString(1, cocinero.getNombre());
 			pst.setString(2, cocinero.getApellido());
 		

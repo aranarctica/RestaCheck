@@ -3,13 +3,24 @@ package modelo;
 import java.util.ArrayList;
 
 public class Restaurante extends Conector{
-
+/**
+ * 
+ * Atributos de Restaurante
+ */
 	private int idRestaurante;
 	private String nombre;
 	private String direccion;
 	private String telefono;
-	private String precio;
 	
+	
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
 
 	public int getIdRestaurante() {
 		return idRestaurante;
@@ -35,21 +46,7 @@ public class Restaurante extends Conector{
 		this.direccion = direccion;
 	}
 
-	public String getTelefono() {
-		return telefono;
-	}
-
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
-	}
-
-	public String getPrecio() {
-		return precio;
-	}
-
-	public void setPrecio(String precio) {
-		this.precio = precio;
-	}
+	
 
 	
 

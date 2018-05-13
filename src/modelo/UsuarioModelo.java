@@ -9,7 +9,12 @@ import java.util.ArrayList;
 import modelo.Usuario;
 
 public class UsuarioModelo extends Conector {
-
+	/**
+	 * 
+	 * Recoge todos los atributos de Usuario y los delvuelve en un ArrayList
+	 * 
+	 * @return ArrayList<Usuario> lista Usuarios
+	 */
 	public ArrayList<Usuario> selectAll() {
 		ArrayList<Usuario> listaUsuarios = new ArrayList<Usuario>();
 		try {
@@ -32,6 +37,14 @@ public class UsuarioModelo extends Conector {
 		return listaUsuarios;
 	}
 
+	/**
+	 * Selecciona cada Usuario por su codigo
+	 * 
+	 * @param idUsuarios
+	 *            tipo int
+	 * @return Usuario usuario
+	 */
+
 	public Usuario selectPorid(int idUsuario) {
 		Usuario usuario = new Usuario();
 		try {
@@ -53,6 +66,14 @@ public class UsuarioModelo extends Conector {
 		}
 		return usuario;
 	}
+	/**
+	 * 
+	 * 
+	 * Selecciona los datos email y contrasena desde la base de datos
+	 * @param email parametro email de la base de datos
+	 * @param contrasena parametro contrasena de la base de datos
+	 * @return recibe un usuario
+	 */
 
 	public Usuario selectEmailContrasena(String email, String contrasena) {
 
@@ -79,6 +100,12 @@ public class UsuarioModelo extends Conector {
 		return null;
 	}
 
+	/**
+	 * Inserta un Usuario en la Base De Datos
+	 * 
+	 * @param usuario
+	 *            Añade un Usuario
+	 */
 	public void insertarUsuario(Usuario usuario) {
 		try {
 			PreparedStatement pst = super.conexion.prepareStatement(
@@ -87,8 +114,8 @@ public class UsuarioModelo extends Conector {
 			pst.setString(2, usuario.getApellido());
 			pst.setString(3, usuario.getEmail());
 			pst.setString(4, usuario.getContrasena());
-			pst.setString(6, usuario.getTelefono());
-			pst.setString(7, usuario.getRol());
+			pst.setString(5, usuario.getTelefono());
+			pst.setString(6, usuario.getRol());
 			pst.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();

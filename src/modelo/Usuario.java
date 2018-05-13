@@ -1,7 +1,10 @@
 package modelo;
 
 public class Usuario extends Conector{
-
+/**
+ * 
+ * Atributos de Usuario
+ */
 	private int idUsuario;
 	private String nombre;
 	private String apellido;

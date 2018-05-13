@@ -2,16 +2,16 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="modelo.*"%>
 <%
-	if (request.getParameter("guardar").equals("guardar")) {
-		if (request.getParameter("nombre") != null && request.getParameter("direccion") != null) {
-			String nombre = request.getParameter("nombre");
-			String direccion = request.getParameter("direccion");
-			Restaurante restaurante = new Restaurante();
-			restaurante.getNombre();
-			restaurante.getDireccion();
-			RestauranteModelo restauranteModelo = new RestauranteModelo();
-			restauranteModelo.insert(restaurante);
-		}
+	if (request.getParameter("nombre") != null && request.getParameter("direccion") != null && request.getParameter("telefono")!= null) {
+		String nombre = request.getParameter("nombre");
+		String direccion = request.getParameter("direccion");
+		String telefono = request.getParameter("telefono");
+		Restaurante restaurante = new Restaurante();
+		restaurante.setNombre(nombre);
+		restaurante.setDireccion(direccion);
+		restaurante.setTelefono(telefono);
+		RestauranteModelo restauranteModelo = new RestauranteModelo();
+		restauranteModelo.insert(restaurante);
 	}
 %>
 
@@ -33,35 +33,45 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h3 class="panel-title">Añade Un Restaurante</h3>
+
 					</div>
 					<div class="panel-body">
-						<form role="form">
+						<form action="anadirRestaurante.jsp" method="post" role="form">
 							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
-										<input type="text" name="first_name" id="nombre"
+										<input type="text" name="nombre" id="nombre"
 											class="form-control input-sm" placeholder="nombre">
 									</div>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
-										<input type="text" name="last_name" id="direccion"
+										<input type="text" name="direccion" id="direccion"
 											class="form-control input-sm" placeholder="direccion">
 									</div>
 								</div>
-
-
-
-
-
- ta 
-								<input type="submit" name="guardar" value="guardar" /> </span> <span
-									class="group-btn"> <a
-									href="../cocineros/listaRestaurantes.jsp"
-									class="btn btn-primary btn-md">Cancelar </a>
+								<div class="col-xs-6 col-sm-6 col-md-6">
+									<div class="form-group">
+										<input type="text" name="telefono" id="telefono"
+											class="form-control input-sm" placeholder="telefono">
+									</div>
+								</div>
+								
+								
+								<span class="group-btn">
+									<input type="file" name="file" /> 
+								
+								 <a
+									href="../restaurantes/listaRestaurantes.jsp"><input
+										class="btn btn-primary btn-md" type="submit" name="guardar"
+										value="guardar"> </a> <span class="group-btn"> <a
+										href="../restaurantes/listaRestaurantes.jsp"
+										class="btn btn-primary btn-md">Atras </a>
 								</span>
 						</form>
+
 					</div>
+
 				</div>
 			</div>
 		</div>

@@ -21,9 +21,9 @@ public class crearCuenta extends HttpServlet{
 		String telefono = request.getParameter("telefono");
 		
 		
-		Usuario usuario = new Usuario();
+		Usuario usuario = new Usuario(email,contrasena,nombre,apellido,"user",telefono);
 		
-		if (nombre != "" && apellido != "" && email != "" && contrasena != "" && telefono != "") {
+		if (nombre != "" && apellido != "" && email != "" && contrasena != "" ) {
 		
 			usuarioModelo.insertarUsuario(usuario);
 			response.sendRedirect("web/categoria.html");

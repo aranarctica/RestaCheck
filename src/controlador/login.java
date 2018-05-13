@@ -28,7 +28,7 @@ public class login extends HttpServlet{
 			RequestDispatcher dispatcher = request.getRequestDispatcher("web/gestor_login/sistema.jsp");
 			dispatcher.forward(request, response);
 		} else {
-
+			
 		}
 	}
 }

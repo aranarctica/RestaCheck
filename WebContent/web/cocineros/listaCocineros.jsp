@@ -45,7 +45,10 @@
 </head>
 <span class="group-btn"> <a
 	href="../cocineros/anadirCocineros.jsp" class="btn btn-primary btn-md">Añadir
-		un Cocinero <i class="fa fa-sign-in"></i>
+		un Cocinero 
+</a>
+<span class="group-btn"> <a
+	href="../restaurantes/listaRestaurantes.jsp" class="btn btn-primary btn-md">Ir a Restaurantes
 </a>
 	<body id="page-top">
 
