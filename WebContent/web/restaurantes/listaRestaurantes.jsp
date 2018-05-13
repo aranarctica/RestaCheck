@@ -64,14 +64,13 @@
 				<div class="row no-gutters popup-gallery">
 					<div class="col-lg-4 col-sm-6">
 						<a class="portfolio-box"
-							href="../cocineros/infoCocineros.jsp?idCocinero=<%=restaurante.getIdRestaurante() %>">
+							href="../restaurantes/infoRestaurante.jsp?idRestaurante=<%=restaurante.getIdRestaurante() %>">
 							<img class="img-fluid" src="img/portfolio/thumbnails/1.jpg"
 							alt="">
 							<div class="portfolio-box-caption">
 								<div class="portfolio-box-caption-content">
 
-									<div class="project-name"><%=restaurante.getNombre() %></div>
-									<div class="project-name"><%=restaurante.getDireccion() %></div>
+									<div class="project-name"><%=restaurante.getNombre()%></div>
 
 
 

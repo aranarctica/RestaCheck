@@ -10,7 +10,7 @@
     		cocinero.setNombre(nombre);
     		cocinero.setApellido(apellido);
     		CocineroModelo cocineroModelo = new CocineroModelo();
-    				cocineroModelo.insert(cocinero);
+    		cocineroModelo.insert(cocinero);
 		}
 	}
 %>
@@ -18,9 +18,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-	<link
-		href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
-		rel="stylesheet" id="bootstrap-css">
+	
 	<script
 		src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -35,7 +33,7 @@
 						<h3 class="panel-title">Añade Un Cocinero</h3>
 					</div>
 					<div class="panel-body">
-						<form acticon="anadirCocineros.jsp" method="post" role="form">
+						<form action="anadirCocineros.jsp" method="post" role="form">
 							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
@@ -55,8 +53,8 @@
 
 
 
-							<input type="submit" name="guardar" value="guardar"/>
-							</span> <span class="group-btn"> <a
+							<input type="submit" name="guardar" value="guardar">
+							 <span class="group-btn"> <a
 								href="../cocineros/listaCocineros.jsp"
 								class="btn btn-primary btn-md">Cancelar 
 							</a>
