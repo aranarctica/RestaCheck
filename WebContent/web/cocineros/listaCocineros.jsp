@@ -65,13 +65,15 @@
 					<div class="col-lg-4 col-sm-6">
 						<a class="portfolio-box"
 							href="../cocineros/infoCocineros.jsp?idCocinero=<%=cocinero.getIdCocinero()%>">
-							<img class="img-fluid" src="img/portfolio/thumbnails/1.jpg"
+							<img class="img-fluid" src="img/portfolio/thumbnails/4.jpg"
 							alt="">
 							<div class="portfolio-box-caption">
 								<div class="portfolio-box-caption-content">
 
 									<div class="project-name"><%=cocinero.getNombre()%></div>
 									<div class="project-name"><%=cocinero.getApellido()%></div>
+									
+									
 
 
 

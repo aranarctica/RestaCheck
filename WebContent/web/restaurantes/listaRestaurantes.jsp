@@ -44,7 +44,7 @@
 
 </head>
 <span class="group-btn"> <a
-	href="../cocineros/anadirRestaurante.jsp" class="btn btn-primary btn-md">Añadir
+	href="../restaurantes/anadirRestaurante.jsp" class="btn btn-primary btn-md">Añadir
 		un Restaurante <i class="fa fa-sign-in"></i>
 </a>
 	<body id="page-top">

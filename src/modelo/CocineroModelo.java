@@ -55,9 +55,12 @@ public class CocineroModelo extends Conector {
 
 		try {
 			PreparedStatement pst = super.conexion
-					.prepareStatement("INSERT INTO cocineros (nombre, apellido) values(?,?)");
+					.prepareStatement("INSERT INTO cocineros (nombre, apellido, img) values(?,?,?");
 			pst.setString(1, cocinero.getNombre());
 			pst.setString(2, cocinero.getApellido());
+		
+
+			
 
 			pst.execute();
 

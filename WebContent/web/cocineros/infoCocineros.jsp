@@ -55,7 +55,7 @@
 		<div class="container-fluid p-0">
 			<div class="row no-gutters popup-gallery">
 				<div class="col-lg-4 col-sm-6">
-					<a class="portfolio-box" href=> <img
+					<img
 						class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
 						<div class="portfolio-box-caption">
 							<div class="portfolio-box-caption-content">
@@ -69,7 +69,7 @@
 
 							</div>
 						</div>
-					</a>
+					
 				</div>
 
 
