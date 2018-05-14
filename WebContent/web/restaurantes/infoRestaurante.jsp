@@ -2,15 +2,13 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="modelo.Restaurante"%>
 <%@page import="modelo.RestauranteModelo"%>
-<%@ page import="java.util.ArrayList" %>
- <%@ page import="java.util.Iterator" %>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.Iterator"%>
 
 <%
 	int idRestaurante = Integer.parseInt(request.getParameter("idRestaurante"));
 	RestauranteModelo restauranteModelo = new RestauranteModelo();
 	Restaurante restaurante = restauranteModelo.selectPorid(idRestaurante);
-	
-
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,29 +47,31 @@
 <body id="page-top">
 
 
-	
+
 
 	<section class="p-0" id="portfolio">
 
 		<div class="container-fluid p-0">
 			<div class="row no-gutters popup-gallery">
 				<div class="col-lg-4 col-sm-6">
-					<img
-						class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
-						<div class="portfolio-box-caption">
-							<div class="portfolio-box-caption-content">
+					<img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+					<div class="portfolio-box-caption">
+						<div class="portfolio-box-caption-content">
 
-								<div class="project-name"><%=restaurante.getNombre()	%></div>
-								<div class="project-name"><%=restaurante.getDireccion()	%></div>
-								
-								
-								
+							<div class="project-name"><%=restaurante.getNombre()%></div>
+							<div class="project-name"><%=restaurante.getDireccion()%></div>
+							<div class="project-name"><%=restaurante.getTelefono()%></div>
+							<div class="project-name"><%=restaurante.getEmail()%></div>
 
 
 
-							</div>
+
+
+
+
 						</div>
-					
+					</div>
+
 				</div>
 
 
@@ -80,7 +80,7 @@
 
 			</div>
 		</div>
-		
+
 	</section>
 
 

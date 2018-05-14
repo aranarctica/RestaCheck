@@ -2,14 +2,18 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="modelo.*"%>
 <%
-	if (request.getParameter("nombre") != null && request.getParameter("direccion") != null && request.getParameter("telefono")!= null) {
+	if (request.getParameter("nombre") != null && request.getParameter("direccion") != null
+			&& request.getParameter("email") != null && request.getParameter("telefono") != null
+			&& request.getParameter("estrellas") != null) {
 		String nombre = request.getParameter("nombre");
 		String direccion = request.getParameter("direccion");
 		String telefono = request.getParameter("telefono");
+		String email = request.getParameter("email");
+		String estrellas = request.getParameter("estrellas");
 		Restaurante restaurante = new Restaurante();
 		restaurante.setNombre(nombre);
 		restaurante.setDireccion(direccion);
-		restaurante.setTelefono(telefono);
+		restaurante.setEmail(email);
 		RestauranteModelo restauranteModelo = new RestauranteModelo();
 		restauranteModelo.insert(restaurante);
 	}
@@ -52,17 +56,26 @@
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
+										<input type="email" name="email" id="email"
+											class="form-control input-sm" placeholder="email">
+									</div>
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6">
+									<div class="form-group">
 										<input type="text" name="telefono" id="telefono"
 											class="form-control input-sm" placeholder="telefono">
 									</div>
 								</div>
-								
-								
-								<span class="group-btn">
-									<input type="file" name="file" /> 
-								
-								 <a
-									href="../restaurantes/listaRestaurantes.jsp"><input
+									<div class="col-xs-6 col-sm-6 col-md-6">
+									<div class="form-group">
+										<input type="text" name="estrellas" id="estrellas"
+											class="form-control input-sm" placeholder=estrellas>
+									</div>
+								</div>
+
+								<span class="group-btn"> <input type="file" name="file" />
+
+									<a href="../restaurantes/listaRestaurantes.jsp"><input
 										class="btn btn-primary btn-md" type="submit" name="guardar"
 										value="guardar"> </a> <span class="group-btn"> <a
 										href="../restaurantes/listaRestaurantes.jsp"

@@ -11,8 +11,26 @@ public class Restaurante extends Conector{
 	private String nombre;
 	private String direccion;
 	private String telefono;
+	private String email;
+	private String estrellas;
 	
 	
+
+	public String getEstrellas() {
+		return estrellas;
+	}
+
+	public void setEstrellas(String estrellas) {
+		this.estrellas = estrellas;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public String getTelefono() {
 		return telefono;

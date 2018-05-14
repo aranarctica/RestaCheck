@@ -23,6 +23,8 @@ public class RestauranteModelo extends Conector {
 				restaurante.setIdRestaurante(rs.getInt("idRestaurante"));
 				restaurante.setNombre(rs.getString("nombre"));
 				restaurante.setTelefono(rs.getString("telefono"));
+				restaurante.setEmail(rs.getString("email"));
+				restaurante.setEstrellas(rs.getString("estrellas"));
 				restaurantes.add(restaurante);
 
 			}
@@ -49,7 +51,8 @@ public class RestauranteModelo extends Conector {
 				restaurante.setNombre(rs.getString("nombre"));
 				restaurante.setDireccion(rs.getString("direccion"));
 				restaurante.setTelefono(rs.getString("telefono"));
-				
+				restaurante.setEmail(rs.getString("email"));
+				restaurante.setEstrellas(rs.getString("estrellas"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -63,11 +66,12 @@ public class RestauranteModelo extends Conector {
 	public void insert(Restaurante restaurante) {
 
 		try {
-			PreparedStatement pst = super.conexion.prepareStatement("INSERT INTO restaurante (nombre, direccion, telefono) values(?,?,?)");
+			PreparedStatement pst = super.conexion.prepareStatement("INSERT INTO restaurante (nombre, direccion, telefono, email, estrellas) values(?,?,?,?,?)");
 			pst.setString(1, restaurante.getNombre());
 			pst.setString(2, restaurante.getDireccion());
 			pst.setString(3, restaurante.getTelefono());
-			
+			pst.setString(4, restaurante.getEmail());
+			pst.setString(5, restaurante.getEstrellas());
 
 			pst.execute();
 
